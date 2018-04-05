@@ -1,5 +1,3 @@
-package se.liu.ida.hello;
-
 import org.joda.time.LocalTime;
 import org.apache.log4j.Logger;
 
