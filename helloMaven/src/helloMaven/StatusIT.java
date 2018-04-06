@@ -1,3 +1,4 @@
+package helloMaven;
 import static org.junit.Assert.*;
 import junit.framework.TestCase;
 
