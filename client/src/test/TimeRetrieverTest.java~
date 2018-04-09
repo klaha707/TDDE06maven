@@ -1,5 +1,5 @@
 package test;
-import static org.junit.Assert.*;
+import static junit.Assert.*;
 import junit.framework.TestCase;
 import main.TimeRetriever;
 

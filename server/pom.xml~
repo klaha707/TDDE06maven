@@ -9,8 +9,6 @@
   <artifactId>server</artifactId>
   <version>0.0.1-SNAPSHOT</version>
   <build>
-    <sourceDirectory>src</sourceDirectory>
-    <directory>bin</directory>
 	<plugins>
       <plugin>
         <groupId>com.igormaznitsa</groupId>
@@ -29,6 +27,7 @@
               <packages>
                 <package>todo.go</package>
               </packages>
+		<packaging>rar</packaging>
             </configuration>
           </execution>
         </executions>

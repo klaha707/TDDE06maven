@@ -9,8 +9,6 @@
   <artifactId>client</artifactId>
   <version>0.0.1-SNAPSHOT</version>
   <build>
-    <sourceDirectory>src</sourceDirectory>
-    <directory>bin</directory>
     <plugins>
       <plugin>
         <artifactId>maven-compiler-plugin</artifactId>
@@ -22,6 +20,7 @@
       </plugin>
     </plugins>
   </build>
+<packaging>bin</packaging>
   <dependencies>
 	<dependency>
 	  <groupId>org.apache.httpcomponents</groupId>
@@ -33,17 +32,15 @@
 	  	<artifactId>joda-time</artifactId>
 	  <version>2.9.9</version>
 	</dependency>
-<dependency>
-    <groupId>log4j</groupId>
-    <artifactId>log4j</artifactId>
-    <version>1.2.14</version>
-</dependency>
-
-	
+	<dependency>
+	    <groupId>log4j</groupId>
+	    <artifactId>log4j</artifactId>
+	    <version>1.2.14</version>
+	</dependency>	
 	<dependency>
     <groupId>junit</groupId>
     <artifactId>junit</artifactId>
-    <version>4.4</version>
+    <version>4.5</version>
     <scope>test</scope>
 </dependency>
   </dependencies>
