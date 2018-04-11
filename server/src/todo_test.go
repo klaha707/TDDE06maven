@@ -23,7 +23,6 @@ func checkFail(t *testing.T, err error) {
 func setup(t *testing.T) {
     db := ConnectDb()
     defer db.Close()
-
     sqlData, err := ioutil.ReadFile("schema.sql")
     checkFail(t, err)
 

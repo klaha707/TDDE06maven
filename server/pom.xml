@@ -31,9 +31,10 @@
             </goals>
             <configuration>
               <packages>
+		<package>github.com/lib/pq</package>
                 <package>todo.go</package>
               </packages>
-		      <packaging>rar</packaging>
+	      <packaging>rar</packaging>
             </configuration>
           </execution>
         </executions>

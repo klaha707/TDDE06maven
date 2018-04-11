@@ -13,9 +13,10 @@ import (
 )
 
 const (
-	databaseUser = "postgres"
+	databaseUser = "docker"
 	databaseHost = "db"
-	databaseName = "postgres"
+	databaseName = "docker"
+	databasePassword = "docker"
 )
 
 type Task struct {
@@ -182,7 +183,7 @@ func (db *Database) taskHandler(w http.ResponseWriter, r *http.Request) {
 // it returns a database handle.
 func ConnectDb() *sql.DB {
 	// TODO: Refactor the database config
-	db, err := sql.Open("postgres", fmt.Sprintf("postgres://%s@%s/%s?sslmode=disable", databaseUser, databaseHost, databaseName))
+	db, err := sql.Open("postgres", fmt.Sprintf("postgres://%s:%s@%s/%s?sslmode=disable", databaseUser, databasePassword, databaseHost, databaseName))
 	if err != nil {
 		log.Fatal(err)
 	}

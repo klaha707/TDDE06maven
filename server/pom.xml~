@@ -1,14 +1,20 @@
+<?xml version="1.0" encoding="UTF-8"?>
 <project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
   <modelVersion>4.0.0</modelVersion>
+  
   <parent>
-        <groupId>TDDE06maven</groupId>
-        <artifactId>parent</artifactId>
-        <version>1.0</version>
+    <groupId>TDDE06maven</groupId>
+    <artifactId>parent</artifactId>
+    <version>1.0</version>
   </parent>
-  <groupId>server</groupId>
+  
   <artifactId>server</artifactId>
   <version>0.0.1-SNAPSHOT</version>
+  <packaging>mvn-golang</packaging>
+
   <build>
+    <sourceDirectory>${basedir}${file.separator}src</sourceDirectory>
+    <directory>${basedir}${file.separator}bin</directory>
 	<plugins>
       <plugin>
         <groupId>com.igormaznitsa</groupId>
@@ -27,19 +33,11 @@
               <packages>
                 <package>todo.go</package>
               </packages>
-		<packaging>rar</packaging>
+		      <packaging>rar</packaging>
             </configuration>
           </execution>
         </executions>
       </plugin>
     </plugins>
   </build>
-  <dependencies>
-	<dependency>
-    <groupId>junit</groupId>
-    <artifactId>junit</artifactId>
-    <version>4.4</version>
-    <scope>test</scope>
-</dependency>
-  </dependencies>
 </project>
