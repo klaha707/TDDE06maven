@@ -14,7 +14,7 @@
 
   <build>
     <sourceDirectory>${basedir}${file.separator}src</sourceDirectory>
-    <directory>${basedir}${file.separator}bin</directory>
+<!--    <directory>${basedir}${file.separator}bin</directory>-->
 	<plugins>
       <plugin>
         <groupId>com.igormaznitsa</groupId>
@@ -31,11 +31,18 @@
             </goals>
             <configuration>
               <packages>
-		<package>github.com/lib/pq</package>
                 <package>todo.go</package>
               </packages>
 	      <packaging>rar</packaging>
             </configuration>
+          </execution>
+<execution>
+<id>default-get</id>
+<configuration>
+              <packages>
+		<package>github.com/lib/pq</package>
+              </packages>
+ </configuration>
           </execution>
         </executions>
       </plugin>
