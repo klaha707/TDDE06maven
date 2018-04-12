@@ -14,8 +14,8 @@
 
   <build>
     <sourceDirectory>${basedir}${file.separator}src</sourceDirectory>
-<!--    <directory>${basedir}${file.separator}bin</directory>-->
-	<plugins>
+    <!--<directory>${basedir}${file.separator}bin</directory>-->
+    <plugins>
       <plugin>
         <groupId>com.igormaznitsa</groupId>
         <artifactId>mvn-golang-wrapper</artifactId>
@@ -25,24 +25,38 @@
           <goVersion>1.9.2</goVersion>
         </configuration>
         <executions>
-          <execution>
+          <execution> <!-- Required package for todo.go -->
+            <id>dependency</id>
             <goals>
-              <goal>run</goal>
+              <goal>get</goal>
+            </goals>
+            <configuration>
+              <packages>
+		<package>github.com/lib/pq</package>
+              </packages>
+            </configuration>
+          </execution>
+          <execution> <!-- Test -->
+            <id>test</id>
+            <goals>
+              <goal>test</goal>
             </goals>
             <configuration>
               <packages>
                 <package>todo.go</package>
               </packages>
-	      <packaging>rar</packaging>
             </configuration>
           </execution>
-<execution>
-<id>default-get</id>
-<configuration>
+          <execution> <!-- Build -->
+            <id>package</id>
+            <goals>
+              <goal>build</goal>
+            </goals>
+            <configuration>
               <packages>
-		<package>github.com/lib/pq</package>
+                <package>todo.go</package>
               </packages>
- </configuration>
+            </configuration>
           </execution>
         </executions>
       </plugin>

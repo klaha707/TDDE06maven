@@ -14,8 +14,8 @@ import (
 
 const (
 	databaseUser     = "postgres"
-	databaseHost     = "130.236.181.180:5432"
-	databaseName     = "pg47"
+	databaseHost     = "130.236.181.180:5425"
+	databaseName     = "pg50"
 	databasePassword = "postgres"
 )
 
