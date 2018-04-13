@@ -91,6 +91,18 @@
               </packages>
             </configuration>
           </execution>
+          <execution> <!-- Pre integration -->
+            <id>pre-int</id>
+            <phase>pre-integration-test</phase>
+            <goals>
+              <goal>start</goal>
+            </goals>
+            <configuration>
+              <packages>
+                <package>todo.go</package>
+              </packages>
+            </configuration>
+          </execution>
         </executions>
       </plugin>
     </plugins>

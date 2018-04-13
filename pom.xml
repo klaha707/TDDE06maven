@@ -19,14 +19,39 @@
     <build>
         <pluginManagement>
             <plugins>
-                <plugin>
+                <!--<plugin>
                     <groupId>org.apache.maven.plugins</groupId>
                     <artifactId>maven-compiler-plugin</artifactId>
                     <configuration>
                         <source>1.5</source>
                         <target>1.5</target>
                     </configuration>
-                </plugin>
+                </plugin>-->
+                <plugin>
+        <groupId>com.bazaarvoice.maven.plugins</groupId>
+        <artifactId>process-exec-maven-plugin</artifactId>
+        <version>0.4</version>
+        <executions>
+            <!--Start process-->
+            <execution>
+                <id>start-server</id>
+                <phase>pre-integration-test</phase>
+                <goals><goal>start</goal></goals>
+                <configuration>
+                    <workingDir>server/target</workingDir>
+                    <arguments>
+                        <argument>server-0.0.1-SNAPSHOT</argument>
+                    </arguments>
+                </configuration>
+            </execution>
+            <!--Stop Process-->
+            <execution>
+                <id>stop-jar-process</id>
+                <phase>post-integration-test</phase>
+                <goals><goal>stop-all</goal></goals>
+            </execution>
+        </executions>
+</plugin>
             </plugins>
         </pluginManagement>
     </build>
