@@ -55,7 +55,7 @@
               <buildFlags>
                 <flag>-v</flag>
               </buildFlags>
-              <outLogFile>test-out.log</outLogFile>
+              <outLogFile>test-out-verbose.log</outLogFile>
               <ignoreErrorExitCode>true</ignoreErrorExitCode>
             </configuration>
           </execution>
