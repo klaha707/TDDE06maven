@@ -7,6 +7,9 @@
     <artifactId>parent</artifactId>
     <version>1.0</version>
   </parent>
+    <properties>
+    <xunit.report>${project.build.directory}${file.separator}reports${file.separator}xunit.xml</xunit.report>
+  </properties>
   
   <artifactId>server</artifactId>
   <version>0.0.1-SNAPSHOT</version>
@@ -36,15 +39,45 @@
               </packages>
             </configuration>
           </execution>
-          <execution> <!-- Test -->
-            <id>test</id>
-            <goals>
-              <goal>test</goal>
-            </goals>
+          <!-- Get xunit generator -->
+          <execution>
+            <id>default-get</id>
             <configuration>
               <packages>
-                <package>todo.go</package>
+                <package>github.com/tebeka/go2xunit</package>
               </packages>
+            </configuration>
+          </execution> 
+          <!-- Check all tests with producing report file in Golang format -->
+          <execution>
+            <id>default-test</id>
+            <configuration>
+              <buildFlags>
+                <flag>-v</flag>
+              </buildFlags>
+              <outLogFile>test-out.log</outLogFile>
+              <ignoreErrorExitCode>true</ignoreErrorExitCode>
+            </configuration>
+          </execution>
+          <!-- Convert generated test report into xunit format and save as file -->
+          <execution>
+            <id>makeXUnitReport</id>
+            <phase>test</phase>
+            <goals>
+              <goal>custom</goal>
+            </goals>
+            <configuration>
+              <exec>go2xunit</exec>
+              <customCommand>-fail</customCommand>
+              <buildFlags>
+                <flag>-input</flag>
+                <flag>${project.build.directory}${file.separator}reports${file.separator}test-out-verbose.log</flag>
+                <flag>-output</flag>
+                <flag>${xunit.report}</flag>
+              </buildFlags>
+              <echo>
+                <info>XUnit report saved as ${xunit.report}</info>
+              </echo>
             </configuration>
           </execution>
           <execution> <!-- Build -->
