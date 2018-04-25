@@ -12,6 +12,7 @@
     <name>Parent Project</name>
 
     <modules>
+	<module>bestpluginever-maven-plugin</module>
         <module>client</module>
         <module>server</module>
     </modules>
@@ -58,6 +59,14 @@
         <groupId>bestPluginEver</groupId>
         <artifactId>TDDE06</artifactId>
         <version>1.0-SNAPSHOT</version>
+	<executions>
+          <execution>
+            <phase>compile</phase>
+            <goals>
+              <goal>sayhi</goal>
+            </goals>
+          </execution>
+        </executions>
       </plugin>
             </plugins>
         </pluginManagement>

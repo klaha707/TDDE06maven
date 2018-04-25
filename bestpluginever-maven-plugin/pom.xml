@@ -1,8 +1,13 @@
 <project>
   <modelVersion>4.0.0</modelVersion>
+
+<parent>
+    <groupId>TDDE06maven</groupId>
+    <artifactId>parent</artifactId>
+    <version>1.0</version>
+  </parent>
  
-  <groupId>bestPluginEver</groupId>
-  <artifactId>parent</artifactId>
+  <artifactId>bestpluginever-maven-plugin</artifactId>
   <version>1.0-SNAPSHOT</version>
   <packaging>maven-plugin</packaging>
  
