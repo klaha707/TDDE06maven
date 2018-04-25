@@ -6,7 +6,7 @@
     <modelVersion>4.0.0</modelVersion>
 
     <groupId>TDDE06maven</groupId>
-    <artifactId>parent</artifactId>
+    <artifactId>TDDE06</artifactId>
     <packaging>pom</packaging>
     <version>1.0</version>
     <name>Parent Project</name>
@@ -54,6 +54,15 @@
             </execution>
         </executions>
 </plugin>
+<build>
+    <plugins>
+      <plugin>
+        <groupId>bestPluginEver</groupId>
+        <artifactId>TDDE06</artifactId>
+        <version>1.0-SNAPSHOT</version>
+      </plugin>
+    </plugins>
+  </build>
             </plugins>
         </pluginManagement>
     </build>
