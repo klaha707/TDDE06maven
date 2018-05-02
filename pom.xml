@@ -54,10 +54,10 @@
                 <goals><goal>stop-all</goal></goals>
             </execution>
         </executions>
-</plugin>
+        </plugin>
 	<plugin>
         <groupId>main.java</groupId>
-        <artifactId>TDDE06</artifactId>
+        <artifactId>bestpluginever-maven-plugin</artifactId>
         <version>1.0-SNAPSHOT</version>
 	<executions>
           <execution>
