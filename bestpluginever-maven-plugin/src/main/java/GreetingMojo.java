@@ -2,8 +2,9 @@ package main.java;
 
 import org.apache.maven.plugin.AbstractMojo;
 import org.apache.maven.plugin.MojoExecutionException;
-import org.apache.maven.plugins.annotations.LifecyclePhase;
 import org.apache.maven.plugins.annotations.Mojo;
+import org.apache.maven.plugins.annotations.Parameter;
+
 import java.io.*;
  
 /**
@@ -12,20 +13,18 @@ import java.io.*;
  */
 
 
-@Mojo( name = "sayhi", defaultPhase = LifecyclePhase.INSTALL)
+@Mojo( name = "sayhi")
 public class GreetingMojo extends AbstractMojo
 {
+	@Parameter( property = "sayhi.filename", defaultValue = "file.txt" )
+	private String filename;
     public void execute() throws MojoExecutionException
     {
-        getLog().info( "Hello, world." );
-        /**
-         * My File.
-         */
-        
+        getLog().info( " ##### Hello, world! ##### " );
         String text = "Hello TDDE06";
         BufferedWriter output = null;
         try {
-        	File myFile = new File("file.txt");
+        	File myFile = new File(filename);
         	output = new BufferedWriter(new FileWriter(myFile));
         	output.write(text);
         } catch (IOException e) {
