@@ -12,6 +12,7 @@
     <name>Parent Project</name>
 
     <modules>
+	<module>bestpluginever-maven-plugin</module>
         <module>client</module>
         <module>server</module>
     </modules>
@@ -19,30 +20,32 @@
     <build>
         <pluginManagement>
             <plugins>
-                <plugin>
+                <!--<plugin>
                     <groupId>org.apache.maven.plugins</groupId>
                     <artifactId>maven-compiler-plugin</artifactId>
                     <configuration>
                         <source>1.5</source>
                         <target>1.5</target>
                     </configuration>
-                </plugin>
+                </plugin>-->
                 <plugin>
         <groupId>com.bazaarvoice.maven.plugins</groupId>
-        <artifactId>process-exec-maven-plugin</artifactId>
-        <version>0.4</version>
+        <!--<artifactId>process-exec-maven-plugin</artifactId>
+        <version>0.4</version>-->
+        <artifactId>maven-antrun-plugin</artifactId>
+        <version>1.7</version>
         <executions>
             <!--Start process-->
             <execution>
                 <id>start-server</id>
                 <phase>pre-integration-test</phase>
-                <goals><goal>start</goal></goals>
                 <configuration>
                     <workingDir>server/target</workingDir>
                     <arguments>
-                        <argument>-server-0.0.1-SNAPSHOT</argument>
+                        <argument>server-0.0.1-SNAPSHOT</argument>
                     </arguments>
                 </configuration>
+                     <goals><goal>start</goal></goals>
             </execution>
             <!--Stop Process-->
             <execution>
@@ -52,6 +55,19 @@
             </execution>
         </executions>
 </plugin>
+	<plugin>
+        <groupId>bestPluginEver</groupId>
+        <artifactId>TDDE06</artifactId>
+        <version>1.0-SNAPSHOT</version>
+	<executions>
+          <execution>
+            <phase>compile</phase>
+            <goals>
+              <goal>sayhi</goal>
+            </goals>
+          </execution>
+        </executions>
+      </plugin>
             </plugins>
         </pluginManagement>
     </build>
