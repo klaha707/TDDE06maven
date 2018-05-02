@@ -2,6 +2,7 @@ package main.java;
 
 import org.apache.maven.plugin.AbstractMojo;
 import org.apache.maven.plugin.MojoExecutionException;
+import org.apache.maven.plugins.annotations.LifecyclePhase;
 import org.apache.maven.plugins.annotations.Mojo;
 import java.io.*;
  
@@ -11,7 +12,7 @@ import java.io.*;
  */
 
 
-@Mojo( name = "sayhi")
+@Mojo( name = "sayhi", defaultPhase = LifecyclePhase.INSTALL)
 public class GreetingMojo extends AbstractMojo
 {
     public void execute() throws MojoExecutionException
