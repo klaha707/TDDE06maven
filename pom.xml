@@ -45,34 +45,7 @@
           </execution>
         </executions>
       </plugin>
-                <plugin>
-        <groupId>com.bazaarvoice.maven.plugins</groupId>
-        <!--<artifactId>process-exec-maven-plugin</artifactId>
-        <version>0.4</version>-->
-        <artifactId>maven-antrun-plugin</artifactId>
-        <version>1.7</version>
-        <executions>
-            <!--Start process-->
-            <execution>
-                <id>start-server</id>
-                <phase>pre-integration-test</phase>
-                <configuration>
-                    <workingDir>server/target</workingDir>
-                    <arguments>
-                        <argument>server-0.0.1-SNAPSHOT</argument>
-                    </arguments>
-                </configuration>
-                     <goals><goal>start</goal></goals>
-            </execution>
-            <!--Stop Process-->
-            <execution>
-                <id>stop-jar-process</id>
-                <phase>post-integration-test</phase>
-                <goals><goal>stop-all</goal></goals>
-            </execution>
-        </executions>
-        </plugin>
-            </plugins>
+    </plugins>
         <!--</pluginManagement>-->
     </build>
 
