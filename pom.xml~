@@ -18,17 +18,7 @@
     </modules>
 
     <build>
-        <!--<pluginManagement>-->
-            <plugins>
-                <!--<plugin>
-                    <groupId>org.apache.maven.plugins</groupId>
-                    <artifactId>maven-compiler-plugin</artifactId>
-                    <configuration>
-                        <source>1.5</source>
-                        <target>1.5</target>
-                    </configuration>
-                </plugin>-->
-
+          <plugins>
 	<plugin>
         <groupId>main.java</groupId>
         <artifactId>bestpluginever-maven-plugin</artifactId>
@@ -45,10 +35,33 @@
           </execution>
         </executions>
       </plugin>
+          <plugin>
+                <groupId>org.apache.maven.plugins</groupId>
+                <artifactId>maven-failsafe-plugin</artifactId>
+                <version>2.21.0</version>
+                <executions>
+                    <execution>
+                        <id>integration-test</id>
+                        <goals>
+                            <goal>integration-test</goal>
+                        </goals>
+                    </execution>
+                    <execution>
+                        <id>verify</id>
+                        <goals>
+                            <goal>verify</goal>
+                        </goals>
+                    </execution>
+                </executions>
+                <configuration>
+                    <includes>
+                        <include>client/src/test/StatusIT.java</include>
+                    </includes>
+			<useSystemClassLoader>false</useSystemClassLoader>
+                </configuration>
+            </plugin>
     </plugins>
-        <!--</pluginManagement>-->
     </build>
-
     <dependencies>
         <dependency>
             <groupId>junit</groupId>
