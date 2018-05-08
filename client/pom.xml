@@ -50,7 +50,7 @@
                 <phase>pre-integration-test</phase>
                 <configuration>
                   <target>
-                    <echo message="Prepare integration test..."/>
+                    <echo message="Starting up server..."/>
 		    <exec
 			dir="../server/target"
 			executable="server-0.0.1-SNAPSHOT"
@@ -70,7 +70,10 @@
                 <phase>post-integration-test</phase>
                 <configuration>
                   <target>
-                    <echo message="End integration test..."/>
+                    <echo message="Killing server..."/>
+		    <exec executable="sh">
+			<arg line="killServer.sh"/>
+		    </exec>
                   </target>
                 </configuration>
                 <goals>
